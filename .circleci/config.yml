@@ -1,11 +1,16 @@
 version: 2.1
 
+orbs:
+  foo: karl-yundt/foo@dev:first
+
 jobs:
   build:
     docker:
     - image: bash
     steps:
     - run: "echo 'testing building...'"
+    - foo/hello:
+        username: "Freddie Mercury"
 
 workflows:
   main:
