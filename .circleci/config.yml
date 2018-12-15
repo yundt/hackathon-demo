@@ -1,11 +1,16 @@
 version: 2.1
 
+orbs:
+  greet-test: hackathon-test/greet-test@dev:first
+
 jobs:
   build:
     docker:
     - image: bash
     steps:
     - run: "echo 'testing building...'"
+    - greet-test/hello:
+        username: "Kim"
 
 
 workflows:
